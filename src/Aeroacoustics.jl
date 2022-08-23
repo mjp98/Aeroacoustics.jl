@@ -16,6 +16,7 @@ import Base: *,+,-,/
 import StatsBase: geomean
 
 export PlaneWave, fourierx
+export convectedgust
 export reference_density, reference_length, reference_speed, reference_time
 
 export characteristic_length
@@ -27,7 +28,7 @@ include("turbulence/energyspectra.jl")
 
 
 include("incident/planewave.jl")
-# include("incident/gust.jl")
+include("incident/gust.jl")
 # include("boundary/boundary.jl")
 
 
