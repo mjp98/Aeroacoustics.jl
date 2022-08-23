@@ -21,6 +21,8 @@ export reference_density, reference_length, reference_speed, reference_time
 
 export characteristic_length
 
+export SawtoothWave
+
 # export convectedgust
 include("util.jl")
 include("units.jl")
@@ -29,7 +31,8 @@ include("turbulence/energyspectra.jl")
 
 include("incident/planewave.jl")
 include("incident/gust.jl")
-# include("boundary/boundary.jl")
+
+include("boundary/waveform.jl")
 
 
 
