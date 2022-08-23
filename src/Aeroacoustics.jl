@@ -14,6 +14,7 @@ using UnPack
 # Geometric mean
 import Base: *,+,-,/
 import StatsBase: geomean
+import ApproxFun: Fun, coefficients, evaluate, space
 
 export PlaneWave, fourierx
 export convectedgust

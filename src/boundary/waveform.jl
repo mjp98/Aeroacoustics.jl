@@ -1,10 +1,14 @@
-import ApproxFun: Fun, coefficients, evaluate, space
+
 
 abstract type AbstractWaveform <: Function end
 
 (f::AbstractWaveform)(x) = evaluate(f,x)
 space(::AbstractWaveform) = Fourier(PeriodicSegment(0..1))
-coefficients(f::AbstractWaveform,N::Integer) = [coefficient(f,n) for n in 0:N]Fun(f::AbstractWaveform,N::Integer) = Fun(space(f),coefficients(f,N))
+function coefficients(f::AbstractWaveform,N::Integer)
+    return [coefficient(f,n) for n in 0:N]
+end
+
+Fun(f::AbstractWaveform,N::Integer) = Fun(space(f),coefficients(f,N))
 # SawtoothWave
 
 struct SawtoothWave <: AbstractWaveform end
@@ -18,7 +22,7 @@ function coefficient(::SawtoothWave,n::Integer)
     else
         return 0
     end
-# end
+end
 
 # # SquareWave
 
