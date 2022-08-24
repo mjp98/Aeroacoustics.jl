@@ -16,7 +16,7 @@ struct PlaneWave{N,T} <: Function
     ω::T
     A::T
     function PlaneWave(k::SVector{N,S}, ω=0, A=1) where {N,S}
-        ω = complec(ω)
+        ω = complex(ω)
         T = eltype(promote(k[1], ω, A))
         new{N,T}(convert.(T, k), convert(T, ω), convert(T, A))
     end
