@@ -6,19 +6,19 @@ const DensityDim    = Unitful.𝐌*Unitful.𝐋^-3
 
 # NoUnits forces simplification of μm/m = 1e-6 and Hz*s = 1
 
-function nondimensionalize(d,x::Quantity{T,WavenumberDim,S}) where {T,S}
+function nondimensionalize(x::Quantity{T,WavenumberDim,S},d) where {T,S}
     return NoUnits(x*reference_length(d))
 end
-function nondimensionalize(d,x::Quantity{T,FrequencyDim,S}) where {T,S}
+function nondimensionalize(x::Quantity{T,FrequencyDim,S},d) where {T,S}
     return NoUnits(x*reference_time(d))
 end
-function nondimensionalize(d,x::Quantity{T,LengthDim,S}) where {T,S}
+function nondimensionalize(x::Quantity{T,LengthDim,S},d) where {T,S}
     return NoUnits(x/reference_length(d))
 end
-function nondimensionalize(d,x::Quantity{T,SpeedDim,S}) where {T,S}
+function nondimensionalize(x::Quantity{T,SpeedDim,S},d) where {T,S}
     return NoUnits(x/reference_speed(d))
 end
-function nondimensionalize(d,x::Quantity{T,DensityDim,S}) where {T,S}
+function nondimensionalize(x::Quantity{T,DensityDim,S},d) where {T,S}
     return NoUnits(x/reference_density(d))
 end
 
