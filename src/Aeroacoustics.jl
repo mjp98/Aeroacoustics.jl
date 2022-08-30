@@ -19,6 +19,7 @@ import ApproxFun: Fun, coefficients, evaluate, space
 export PlaneWave, fourierx
 export convectedgust
 export reference_density, reference_length, reference_speed, reference_time
+export ReferenceDimensions
 
 export characteristic_length
 
